@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="696.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.ModifyProductController">
+   <children>
+      <Label layoutX="66.0" layoutY="74.0" text="Modify Products">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="searchModParts" layoutX="783.0" layoutY="72.0" onKeyPressed="#searchAddPart" prefHeight="34.0" prefWidth="149.0" promptText="Search by ID or Name" />
+      <Label layoutX="115.0" layoutY="175.0" text="ID">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="109.0" layoutY="231.0" text="Name">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="112.0" layoutY="285.0" text="Inv">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="111.0" layoutY="340.0" text="Price">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="114.0" layoutY="397.0" text="Max">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="309.0" layoutY="397.0" text="Min">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="modPid" disable="true" layoutX="185.0" layoutY="173.0" prefHeight="34.0" prefWidth="159.0" promptText="Auto-gen field disabled." />
+      <TextField fx:id="modName" layoutX="185.0" layoutY="229.0" prefHeight="34.0" prefWidth="159.0" />
+      <TextField fx:id="monInv" layoutX="185.0" layoutY="283.0" prefHeight="34.0" prefWidth="92.0" />
+      <TextField fx:id="modPrice" layoutX="185.0" layoutY="340.0" prefHeight="34.0" prefWidth="92.0" />
+      <TextField fx:id="modMx" layoutX="185.0" layoutY="395.0" prefHeight="34.0" prefWidth="92.0" />
+      <TextField fx:id="modMn" layoutX="368.0" layoutY="395.0" prefHeight="34.0" prefWidth="92.0" />
+      <TableView fx:id="topModTable" layoutX="510.0" layoutY="131.0" prefHeight="200.0" prefWidth="459.0">
+         <columns>
+            <TableColumn fx:id="modTopPid" prefWidth="114.75" text="Part ID" />
+            <TableColumn fx:id="modTopName" prefWidth="114.75" text="Part Name" />
+            <TableColumn fx:id="modTopIlevel" prefWidth="114.75" text="Inv Level" />
+            <TableColumn fx:id="modTopPrice" prefWidth="114.75" text="Price/Cost" />
+         </columns>
+      </TableView>
+      <TableView fx:id="bottomModTable" layoutX="510.0" layoutY="395.0" prefHeight="200.0" prefWidth="459.0">
+         <columns>
+            <TableColumn fx:id="modBottomPid" prefWidth="114.75" text="Part ID" />
+            <TableColumn fx:id="modBottomName" prefWidth="114.75" text="Part Name" />
+            <TableColumn fx:id="modBottomIlevel" prefWidth="114.75" text="Inv Level" />
+            <TableColumn fx:id="modBottomPrice" prefWidth="114.75" text="Price/Cost" />
+         </columns>
+      </TableView>
+      <Button fx:id="addBtn" layoutX="868.0" layoutY="343.0" mnemonicParsing="false" onAction="#addModAction" text="Add" />
+      <Button fx:id="removeModAssoc" layoutX="820.0" layoutY="597.0" mnemonicParsing="false" onAction="#deleteModAssoc" prefHeight="25.0" prefWidth="135.0" text="Remove Association" />
+      <Button fx:id="saveModBtn" layoutX="820.0" layoutY="636.0" mnemonicParsing="false" onAction="#saveModAction" prefHeight="25.0" prefWidth="52.0" text="Save" />
+      <Button fx:id="cancMod" layoutX="906.0" layoutY="636.0" mnemonicParsing="false" onAction="#cancModAction" text="Cancel" />
+      <Label fx:id="errA" layoutX="16.0" layoutY="462.0" prefHeight="220.0" prefWidth="277.0" />
+   </children>
+</AnchorPane>
